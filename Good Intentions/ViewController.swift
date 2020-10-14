@@ -37,6 +37,7 @@ class ViewController: NSViewController {
         //                                    configuration: <#T##NSWorkspace.OpenConfiguration#>,
         //                                    completionHandler: <#T##((NSRunningApplication?, Error?) -> Void)?##((NSRunningApplication?, Error?) -> Void)?##(NSRunningApplication?, Error?) -> Void#>)
         NSWorkspace.shared.launchApplication("MailMate")
+        exit(0)
     }
 
 }
