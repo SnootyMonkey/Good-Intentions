@@ -706,43 +706,44 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Good_Intentions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="364" height="118"/>
+                        <rect key="frame" x="0.0" y="0.0" width="364" height="170"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MZ-nw-D4V">
-                                <rect key="frame" x="64" y="13" width="92" height="32"/>
+                                <rect key="frame" x="66" y="22" width="80" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Yes, I do" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IIW-sf-boh">
+                                <buttonCell key="cell" type="bevel" title="Yes, I do" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="IIW-sf-boh">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <color key="contentTintColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <connections>
                                     <action selector="launchWithSender:" target="XfG-lQ-9wD" id="oE3-6e-Fw3"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-BJ-SoX">
-                                <rect key="frame" x="156" y="13" width="145" height="32"/>
+                                <rect key="frame" x="154" y="22" width="145" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="No, not right now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z2R-3V-nAk">
+                                <buttonCell key="cell" type="bevel" title="No, not right now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="z2R-3V-nAk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <connections>
                                     <action selector="quitWithSender:" target="XfG-lQ-9wD" id="6dI-Il-rnE"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oP-0P-rR8">
-                                <rect key="frame" x="18" y="82" width="328" height="16"/>
+                                <rect key="frame" x="18" y="97" width="328" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Your intent is to check email at 8:30, 11:30 and 15:30." id="fd1-Lv-jEo">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Your intent is to check email at 8:30, 11:30 and 15:30." allowsEditingTextAttributes="YES" id="fd1-Lv-jEo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4d7-vB-Ixr">
-                                <rect key="frame" x="53" y="58" width="259" height="16"/>
+                                <rect key="frame" x="53" y="73" width="259" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Are you sure you want to open email now?" id="s9E-C2-ho0">
                                     <font key="font" metaFont="system"/>
@@ -750,16 +751,29 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2V0-I8-ImK">
+                                <rect key="frame" x="158" y="124" width="49" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="7:42" id="her-fV-WPv">
+                                    <font key="font" metaFont="system" size="22"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="intentMsgField" destination="7oP-0P-rR8" id="0A0-HG-cNG"/>
                         <outlet property="launchButton" destination="3MZ-nw-D4V" id="BS6-0f-m1h"/>
+                        <outlet property="launchButtonCell" destination="IIW-sf-boh" id="xa4-ay-1Jb"/>
+                        <outlet property="nowField" destination="2V0-I8-ImK" id="iZ6-sM-JR1"/>
                         <outlet property="quitButton" destination="5wh-BJ-SoX" id="CS0-eR-DNl"/>
+                        <outlet property="quitButtonCell" destination="z2R-3V-nAk" id="Zfo-ZR-yi4"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="579"/>
+            <point key="canvasLocation" x="17" y="605"/>
         </scene>
     </scenes>
 </document>
