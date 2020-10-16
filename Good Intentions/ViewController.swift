@@ -9,9 +9,6 @@
 import Darwin
 import Cocoa
 
-// Future config:
-// Launch app's name
-// Time slots (begin, end)
 // Fudge factor
 // App time out
 
@@ -29,10 +26,15 @@ class ViewController: NSViewController {
         var minute:Int
     }
 
+    // Future app config:
+    let appName = "MailMate" // App to launch
     let launchTimes = [LaunchTime(hour: 8, minute: 30),
                        LaunchTime(hour: 11, minute: 30),
                        LaunchTime(hour: 15, minute: 30),
                        LaunchTime(hour: 18, minute: 0)]
+    let launchWindow:TimeInterval = 30 * 60.0 // Allow a 30m launch window
+    let fudgeFactor:TimeInterval = -2 * 60.0 // Allow a 2m too early window
+    let appTimeout = 30.0 // Close the app in 30s if no decision was made
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +66,6 @@ class ViewController: NSViewController {
                                                   of: now)!)
         }
         // Immediately launch the app if in the time window
-        let launchWindow:TimeInterval = 30 * 60.0 // 30m window
-        let fudgeFactor:TimeInterval = -2 * 60.0 // Allow a 2m too early window
         for launchTime in launchTimesToday {
             let timeDelta = now.timeIntervalSince(launchTime)
             if (timeDelta >= fudgeFactor && timeDelta < launchWindow) {
@@ -103,6 +103,11 @@ class ViewController: NSViewController {
         intentMsgField.attributedStringValue = intentMsgString
 
         // Start the app timeout timer
+        Timer.scheduledTimer(timeInterval: appTimeout,
+                                   target: self,
+                                 selector: #selector(timeout),
+                                 userInfo: nil,
+                                  repeats: false)
     }
 
     override var representedObject: Any? {
@@ -115,6 +120,10 @@ class ViewController: NSViewController {
         exit(0)
     }
 
+    @objc func timeout() {
+        exit(0)
+    }
+    
     @IBAction func launch(sender: NSButton) {
         launchApp()
     }
@@ -125,7 +134,7 @@ class ViewController: NSViewController {
         // NSWorkspace.shared.openApplication(at: appURL,
         //                                    configuration: <#T##NSWorkspace.OpenConfiguration#>,
         //                                    completionHandler: <#T##((NSRunningApplication?, Error?) -> Void)?##((NSRunningApplication?, Error?) -> Void)?##(NSRunningApplication?, Error?) -> Void#>)
-        NSWorkspace.shared.launchApplication("MailMate")
+        NSWorkspace.shared.launchApplication(appName)
         exit(0)
     }
 }
