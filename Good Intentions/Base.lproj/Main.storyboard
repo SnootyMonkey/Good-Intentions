@@ -706,11 +706,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Good_Intentions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="364" height="170"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="0.0" y="0.0" width="405" height="170"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MZ-nw-D4V">
-                                <rect key="frame" x="66" y="22" width="80" height="28"/>
+                                <rect key="frame" x="86" y="22" width="80" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="bevel" title="Yes, I do" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="IIW-sf-boh">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -722,7 +722,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-BJ-SoX">
-                                <rect key="frame" x="154" y="22" width="145" height="27"/>
+                                <rect key="frame" x="174" y="22" width="145" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="bevel" title="No, not right now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="z2R-3V-nAk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -734,16 +734,16 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oP-0P-rR8">
-                                <rect key="frame" x="18" y="97" width="328" height="16"/>
+                                <rect key="frame" x="18" y="97" width="369" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Your intent is to check email at 8:30, 11:30 and 15:30." allowsEditingTextAttributes="YES" id="fd1-Lv-jEo">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Your intent is to check email at 8:30, 11:30, 15:30 and 18:00." allowsEditingTextAttributes="YES" id="fd1-Lv-jEo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4d7-vB-Ixr">
-                                <rect key="frame" x="53" y="73" width="259" height="16"/>
+                                <rect key="frame" x="73" y="73" width="259" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Are you sure you want to open email now?" id="s9E-C2-ho0">
                                     <font key="font" metaFont="system"/>
@@ -752,7 +752,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2V0-I8-ImK">
-                                <rect key="frame" x="158" y="124" width="49" height="26"/>
+                                <rect key="frame" x="178" y="124" width="49" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="7:42" id="her-fV-WPv">
                                     <font key="font" metaFont="system" size="22"/>
@@ -773,7 +773,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="605"/>
+            <point key="canvasLocation" x="37.5" y="605"/>
         </scene>
     </scenes>
 </document>
