@@ -9,9 +9,6 @@
 import Darwin
 import Cocoa
 
-// Fudge factor
-// App time out
-
 class ViewController: NSViewController {
 
     @IBOutlet weak var quitButton: NSButton!
@@ -73,10 +70,19 @@ class ViewController: NSViewController {
             }
         }
 
+        // Monitor keystrokes
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
+            self.keyDown(with: $0)
+            return $0
+        }
+        
         // Set the current time in the UI
         let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
+        formatter.dateFormat = "h:mm"
+        // This is more desirable to let user locale control the time
+        // but then it's losing the 12/24h user preference switching
+        // formatter.dateStyle = .none
+        // formatter.timeStyle = .short
         nowField.stringValue = formatter.string(from: now)
         
         // Set the intent message in the UI
@@ -110,24 +116,28 @@ class ViewController: NSViewController {
                                   repeats: false)
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+    override func keyDown(with event: NSEvent) {
+        if (event.keyCode == 76) {
+            quit()
         }
     }
-
+    
     @IBAction func quit(sender: NSButton) {
-        exit(0)
+        quit()
     }
 
     @objc func timeout() {
-        exit(0)
+        quit()
     }
     
     @IBAction func launch(sender: NSButton) {
         launchApp()
     }
 
+    func quit() {
+        exit(0)
+    }
+    
     func launchApp() {
         // On macOS 10.15+ the following is preferred
         // let appURL = URL(fileURLWithPath: "/Applications/MailMate.app")
@@ -135,6 +145,6 @@ class ViewController: NSViewController {
         //                                    configuration: <#T##NSWorkspace.OpenConfiguration#>,
         //                                    completionHandler: <#T##((NSRunningApplication?, Error?) -> Void)?##((NSRunningApplication?, Error?) -> Void)?##(NSRunningApplication?, Error?) -> Void#>)
         NSWorkspace.shared.launchApplication(appName)
-        exit(0)
+        quit()
     }
 }

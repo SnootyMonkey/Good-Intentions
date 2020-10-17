@@ -752,9 +752,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2V0-I8-ImK">
-                                <rect key="frame" x="178" y="124" width="49" height="26"/>
+                                <rect key="frame" x="122" y="124" width="160" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="7:42" id="her-fV-WPv">
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="10:42" id="her-fV-WPv">
                                     <font key="font" metaFont="system" size="22"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
