@@ -78,7 +78,7 @@ class ViewController: NSViewController {
         
         // Set the current time in the UI
         let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm"
+        formatter.dateFormat = "H:mm"
         // This is more desirable to let user locale control the time
         // but then it's losing the 12/24h user preference switching
         // formatter.dateStyle = .none
